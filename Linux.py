@@ -1,5 +1,6 @@
 import mechanize
 from bs4 import BeautifulSoup
+import os, time
 
 BR = mechanize.Browser()
 f = open("data_webkiosk-thapar.txt", 'r')
@@ -38,5 +39,5 @@ while True:
         f = open("history_webkiosk-thapar.txt", "w+")
         f.write(a)
         f.close()
-        #notify new score update
-    break
+        os.system("notify-send \"Thapar University, Patiala: Webkiosk\" \"New Scores have been Declared\"")
+    time.sleep(60*60)
